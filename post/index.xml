@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Feb 2021 20:51:58 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 21:58:54 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shadowsocks</title>
+      <link>https://renhao-0518.github.io/post/shadowsocks/</link>
+      <pubDate>Fri, 26 Feb 2021 21:58:54 +0800</pubDate>
+      
+      <guid>https://renhao-0518.github.io/post/shadowsocks/</guid>
+      <description>翻墙 Install shadowsocks 1 2 3 yum -y install epel-release yum -y install python-pip pip install shadowsocks Configurtion shadowsocks config 免费翻墙账号 1 vim /etc/shadowsocks/shadowsocks.json 1 2 3 4 5 6 7 8 9 10 11 { &amp;#34;server&amp;#34;:&amp;#34;173.0.55.66&amp;#34;, &amp;#34;server_port&amp;#34;:11111, &amp;#34;local_address&amp;#34;: &amp;#34;127.0.0.1&amp;#34;, &amp;#34;local_port&amp;#34;:1080, &amp;#34;password&amp;#34;:&amp;#34;dongtaiwang.com 123abc&amp;#34;, &amp;#34;timeout&amp;#34;:300, &amp;#34;method&amp;#34;:&amp;#34;aes-256-cfb&amp;#34;, &amp;#34;fast_open&amp;#34;: false, &amp;#34;workers&amp;#34;: 1 } Create systemd server 1 2 3 4 5 6 7 8 9 10 11</description>
+    </item>
+    
     <item>
       <title>Dynamic_pv</title>
       <link>https://renhao-0518.github.io/post/dynamic_pv/</link>
