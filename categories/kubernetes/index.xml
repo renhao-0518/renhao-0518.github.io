@@ -6,14 +6,14 @@
     <description>Recent content in kubernetes on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Feb 2021 18:34:42 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 17:51:04 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Etcd</title>
       <link>https://renhao-0518.github.io/post/etcd/</link>
-      <pubDate>Fri, 26 Feb 2021 18:34:42 +0800</pubDate>
+      <pubDate>Fri, 26 Feb 2021 17:51:04 +0800</pubDate>
       
       <guid>https://renhao-0518.github.io/post/etcd/</guid>
-      <description>Etcd BackUp select &amp;amp; delete 1 2 3 4 5 6 ETCDCTL_API=3 etcdctl get / --prefix --keys-only # 删除key etcdctl del /registry/pods/default/nginx-deployment-6795df67f9-p4xqh 查看集群成员 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=&amp;#34;https://172.18.247.200:2379&amp;#34; member list Etcd备份 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=https://172.18.247.200:2379</description>
+      <description>Etcd BackUp select &amp;amp; delete 1 2 3 4 5 6 7 ETCDCTL_API=3 # 查询key etcdctl get / --prefix --keys-only # 删除key etcdctl del /registry/pods/default/nginx-deployment-6795df67f9-p4xqh 查看集群成员 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=&amp;#34;https://172.18.247.200:2379&amp;#34; member list Etcd备份 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl</description>
     </item>
     
     <item>
