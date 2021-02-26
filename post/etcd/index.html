@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Etcd - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Ren Hao" /><meta name="description" content="Etcd BackUp select &amp;amp; delete 1 2 3 4 5 6 ETCDCTL_API=3 etcdctl get / --prefix --keys-only # 删除key etcdctl del /registry/pods/default/nginx-deployment-6795df67f9-p4xqh 查看集群成员 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=&amp;#34;https://172.18.247.200:2379&amp;#34; member list Etcd备份 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=https://172.18.247.200:2379" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.81.0 with theme even" />
+
+
+<link rel="canonical" href="https://renhao-0518.github.io/post/etcd/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Etcd" />
+<meta property="og:description" content="Etcd BackUp select &amp; delete 1 2 3 4 5 6 ETCDCTL_API=3 etcdctl get / --prefix --keys-only # 删除key etcdctl del /registry/pods/default/nginx-deployment-6795df67f9-p4xqh 查看集群成员 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=&#34;https://172.18.247.200:2379&#34; member list Etcd备份 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=https://172.18.247.200:2379" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://renhao-0518.github.io/post/etcd/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-02-26T18:34:42&#43;08:00" />
+<meta property="article:modified_time" content="2021-02-26T18:34:42&#43;08:00" />
+
+<meta itemprop="name" content="Etcd">
+<meta itemprop="description" content="Etcd BackUp select &amp; delete 1 2 3 4 5 6 ETCDCTL_API=3 etcdctl get / --prefix --keys-only # 删除key etcdctl del /registry/pods/default/nginx-deployment-6795df67f9-p4xqh 查看集群成员 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=&#34;https://172.18.247.200:2379&#34; member list Etcd备份 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=https://172.18.247.200:2379"><meta itemprop="datePublished" content="2021-02-26T18:34:42&#43;08:00" />
+<meta itemprop="dateModified" content="2021-02-26T18:34:42&#43;08:00" />
+<meta itemprop="wordCount" content="477">
+<meta itemprop="keywords" content="kubernetes,backup," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Etcd"/>
+<meta name="twitter:description" content="Etcd BackUp select &amp; delete 1 2 3 4 5 6 ETCDCTL_API=3 etcdctl get / --prefix --keys-only # 删除key etcdctl del /registry/pods/default/nginx-deployment-6795df67f9-p4xqh 查看集群成员 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=&#34;https://172.18.247.200:2379&#34; member list Etcd备份 1 2 3 4 5 ETCDCTL_API=3 \ etcdctl --cacert=/etc/kubernetes/ssl/ca.pem \ --cert=/etc/etcd/ssl/etcd.pem \ --key=/etc/etcd/ssl/etcd-key.pem \ --endpoints=https://172.18.247.200:2379"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Cloud Native</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Cloud Native</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Etcd</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-26 </span>
+        <div class="post-category">
+            <a href="/categories/kubernetes/"> kubernetes </a>
+            <a href="/categories/backup/"> backup </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#etcd-backup">Etcd BackUp</a>
+      <ul>
+        <li><a href="#select--delete">select &amp; delete</a></li>
+        <li><a href="#查看集群成员">查看集群成员</a></li>
+        <li><a href="#etcd备份">Etcd备份</a>
+          <ul>
+            <li><a href="#etcd-单节点恢复">Etcd 单节点恢复</a></li>
+            <li><a href="#etcd-集群恢复">Etcd 集群恢复</a></li>
+            <li><a href="#查看集群状态">查看集群状态</a></li>
+          </ul>
+        </li>
+        <li><a href="#备份自动上传阿里oss-shell">备份自动上传阿里oss shell</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="etcd-backup">Etcd BackUp</h1>
+<h2 id="select--delete">select &amp; delete</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span>
+
+etcdctl get /  --prefix --keys-only
+
+<span class="c1"># 删除key</span>
+etcdctl del /registry/pods/default/nginx-deployment-6795df67f9-p4xqh
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="查看集群成员">查看集群成员</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> <span class="se">\
+</span><span class="se"></span>etcdctl  --cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem <span class="se">\
+</span><span class="se"></span>--cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem <span class="se">\
+</span><span class="se"></span>--key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem <span class="se">\
+</span><span class="se"></span>--endpoints<span class="o">=</span><span class="s2">&#34;https://172.18.247.200:2379&#34;</span>   member list
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="etcd备份">Etcd备份</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> <span class="se">\
+</span><span class="se"></span>etcdctl --cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem <span class="se">\
+</span><span class="se"></span>--cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem <span class="se">\
+</span><span class="se"></span>--key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem <span class="se">\
+</span><span class="se"></span>--endpoints<span class="o">=</span>https://172.18.247.200:2379  snapshot save  Etcd-<span class="k">$(</span>date +%Y-%m-%d<span class="k">)</span>.db
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="etcd-单节点恢复">Etcd 单节点恢复</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">    <span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> etcdctl snapshot restore  Etcd-2019-08-21.db <span class="se">\
+</span><span class="se"></span>    --endpoints<span class="o">=</span>172.18.247.200:2379 <span class="se">\
+</span><span class="se"></span>    --name<span class="o">=</span>etcd1 <span class="se">\
+</span><span class="se"></span>    --cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem <span class="se">\
+</span><span class="se"></span>    --cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem <span class="se">\
+</span><span class="se"></span>    --key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem <span class="se">\
+</span><span class="se"></span>    --initial-advertise-peer-urls<span class="o">=</span>https://172.18.247.200:2380 <span class="se">\
+</span><span class="se"></span>    --initial-cluster-token<span class="o">=</span>etcd-cluster-0 <span class="se">\
+</span><span class="se"></span>    --initial-cluster<span class="o">=</span><span class="nv">etcd1</span><span class="o">=</span>https://172.18.247.200:2380 <span class="se">\
+</span><span class="se"></span>    --data-dir<span class="o">=</span>/var/lib/etcd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="etcd-集群恢复">Etcd 集群恢复</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">    <span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> etcdctl snapshot restore  Etcd-2019-08-21.db <span class="se">\
+</span><span class="se"></span>    --endpoints<span class="o">=</span>172.18.247.200:2379 <span class="se">\
+</span><span class="se"></span>    --name<span class="o">=</span>etcd1 <span class="se">\
+</span><span class="se"></span>    --cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem <span class="se">\
+</span><span class="se"></span>    --cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem <span class="se">\
+</span><span class="se"></span>    --key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem <span class="se">\
+</span><span class="se"></span>    --initial-advertise-peer-urls<span class="o">=</span>https://172.18.247.200:2380 <span class="se">\
+</span><span class="se"></span>    --initial-cluster-token<span class="o">=</span>etcd-cluster-0 <span class="se">\
+</span><span class="se"></span>    --initial-cluster<span class="o">=</span><span class="nv">etcd1</span><span class="o">=</span>https://172.18.247.200:2380,etcd2<span class="o">=</span>https://172.18.247.201:2380,etcd3<span class="o">=</span>https://172.18.247.202:2380 <span class="se">\
+</span><span class="se"></span>    --data-dir<span class="o">=</span>/var/lib/etcd
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">    <span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> etcdctl snapshot restore  Etcd-2019-08-21.db <span class="se">\
+</span><span class="se"></span>    --endpoints<span class="o">=</span>172.18.247.201:2379 <span class="se">\
+</span><span class="se"></span>    --name<span class="o">=</span>etcd2 <span class="se">\
+</span><span class="se"></span>    --cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem <span class="se">\
+</span><span class="se"></span>    --cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem <span class="se">\
+</span><span class="se"></span>    --key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem <span class="se">\
+</span><span class="se"></span>    --initial-advertise-peer-urls<span class="o">=</span>https://172.18.247.201:2380 <span class="se">\
+</span><span class="se"></span>    --initial-cluster-token<span class="o">=</span>etcd-cluster-0 <span class="se">\
+</span><span class="se"></span>    --initial-cluster<span class="o">=</span><span class="nv">etcd1</span><span class="o">=</span>https://172.18.247.200:2380,etcd2<span class="o">=</span>https://172.18.247.201:2380,etcd3<span class="o">=</span>https://172.18.247.202:2380 <span class="se">\
+</span><span class="se"></span>    --data-dir<span class="o">=</span>/var/lib/etcd
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">    <span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> etcdctl snapshot restore  Etcd-2019-08-21.db <span class="se">\
+</span><span class="se"></span>    --endpoints<span class="o">=</span>172.18.247.202:2379 <span class="se">\
+</span><span class="se"></span>    --name<span class="o">=</span>etcd3 <span class="se">\
+</span><span class="se"></span>    --cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem <span class="se">\
+</span><span class="se"></span>    --cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem <span class="se">\
+</span><span class="se"></span>    --key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem <span class="se">\
+</span><span class="se"></span>    --initial-advertise-peer-urls<span class="o">=</span>https://172.18.247.202:2380 <span class="se">\
+</span><span class="se"></span>    --initial-cluster-token<span class="o">=</span>etcd-cluster-0 <span class="se">\
+</span><span class="se"></span>    --initial-cluster<span class="o">=</span><span class="nv">etcd1</span><span class="o">=</span>https://172.18.247.200:2380,etcd2<span class="o">=</span>https://172.18.247.201:2380,etcd3<span class="o">=</span>https://172.18.247.202:2380 <span class="se">\
+</span><span class="se"></span>    --data-dir<span class="o">=</span>/var/lib/etcd
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="查看集群状态">查看集群状态</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> <span class="se">\
+</span><span class="se"></span>etcdctl  --write-out<span class="o">=</span>table <span class="se">\
+</span><span class="se"></span>--cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem <span class="se">\
+</span><span class="se"></span>--cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem <span class="se">\
+</span><span class="se"></span>--key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem <span class="se">\
+</span><span class="se"></span>--endpoints<span class="o">=</span><span class="s2">&#34;https://172.18.247.200:2379,etcd2=https://172.18.247.201:2379,etcd3=https://172.18.247.202:2379&#34;</span>  endpoint status
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">+-------------------------+------------------+---------+---------+-----------+-----------+------------+
+<span class="p">|</span>        ENDPOINT         <span class="p">|</span>        ID        <span class="p">|</span> VERSION <span class="p">|</span> DB SIZE <span class="p">|</span> IS LEADER <span class="p">|</span> RAFT TERM <span class="p">|</span> RAFT INDEX <span class="p">|</span>
++-------------------------+------------------+---------+---------+-----------+-----------+------------+
+<span class="p">|</span> https://172.18.247.200:2379 <span class="p">|</span> 3582869f1611cb8e <span class="p">|</span>  3.3.10 <span class="p">|</span>  6.8 MB <span class="p">|</span>     <span class="nb">false</span> <span class="p">|</span>         <span class="m">3</span> <span class="p">|</span>    <span class="m">1593504</span> <span class="p">|</span>
+<span class="p">|</span> https://172.18.247.201:2379 <span class="p">|</span> 7bfaa404fb41a6b7 <span class="p">|</span>  3.3.10 <span class="p">|</span>  6.8 MB <span class="p">|</span>     <span class="nb">false</span> <span class="p">|</span>         <span class="m">3</span> <span class="p">|</span>    <span class="m">1593504</span> <span class="p">|</span>
+<span class="p">|</span> https://172.18.247.202:2379 <span class="p">|</span> d4eb4fd0e7ee1fa7 <span class="p">|</span>  3.3.10 <span class="p">|</span>  6.8 MB <span class="p">|</span>      <span class="nb">true</span> <span class="p">|</span>         <span class="m">3</span> <span class="p">|</span>    <span class="m">1593504</span> <span class="p">|</span>
++-------------------------+------------------+---------+---------+-----------+-----------+------------+
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> <span class="se">\
+</span><span class="se"></span>etcdctl  --cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem <span class="se">\
+</span><span class="se"></span>--cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem <span class="se">\
+</span><span class="se"></span>--key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem <span class="se">\
+</span><span class="se"></span>--endpoints<span class="o">=</span><span class="s2">&#34;https://172.18.247.200:2379,etcd2=https://172.18.247.201:2379,etcd3=https://172.18.247.202:2379&#34;</span>   endpoint health
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 一毫秒等于1000微秒   单位µs 微秒</span>
+https://172.18.247.200:2379 is healthy: successfully committed proposal: <span class="nv">took</span> <span class="o">=</span> 1.10561ms
+https://172.18.247.201:2379 is healthy: successfully committed proposal: <span class="nv">took</span> <span class="o">=</span> 1.10052ms
+https://172.18.247.202:2379 is healthy: successfully committed proposal: <span class="nv">took</span> <span class="o">=</span> 967.975µs
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="备份自动上传阿里oss-shell">备份自动上传阿里oss shell</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mkdir -p /data/etcd/backup
+
+crontab -e
+<span class="c1"># 每天晚上10点30自动备份上传oss</span>
+<span class="m">30</span> <span class="m">22</span> * * * /data/Etcd_back.sh
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="nv">Endpoints</span><span class="o">=</span>172.18.247.200
+<span class="nb">export</span> <span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span>
+/opt/kube/bin/etcdctl --endpoints<span class="o">=</span>https://<span class="nv">$Endpoints</span>:2379 --cacert<span class="o">=</span>/etc/kubernetes/ssl/ca.pem --cert<span class="o">=</span>/etc/etcd/ssl/etcd.pem --key<span class="o">=</span>/etc/etcd/ssl/etcd-key.pem  snapshot save   /xylink/etcd/backup/Etcd-<span class="k">$(</span>date +%Y-%m-%d<span class="k">)</span>.db
+<span class="nb">cd</span> /data/etcd/backup/ <span class="o">&amp;&amp;</span> rm -rf  <span class="sb">`</span>ls  /data/etcd/backup/ <span class="p">|</span> grep -v Etcd-<span class="k">$(</span>date +%Y-%m-%d<span class="k">)</span>.db<span class="sb">`</span>
+/xylink/ossutil64 cp /data/etcd/backup/Etcd-<span class="k">$(</span>date +%Y-%m-%d<span class="k">)</span>.db oss://kubernetes-backup
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Ren Hao</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-02-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/kubernetes/">kubernetes</a>
+          <a href="/tags/backup/">backup</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/velero/">
+            <span class="next-text nav-default">Velero</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://renhao-0518.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Ren Hao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
