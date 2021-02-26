@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Dynamic_pv - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Ren Hao" /><meta name="description" content="Kubernetes dynamic pv Install nfs NFS 是 Network File System 的缩写，即网络文件系统。 详细信息 1 yum -y install nfs-utils Configurtion nfs server 1 2 3 4 5 # 创建共享目录 mkdir /data &amp;amp;&amp;amp; chmod 755 /data vim /etc/exports # 添加配置 /data/ 192.168.0.0/24(rw,sync,no_root_squash,no_all_squash) /data: 共享目录位置。 192.168.0.0/24:" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.81.0 with theme even" />
+
+
+<link rel="canonical" href="https://renhao-0518.github.io/post/dynamic_pv/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Dynamic_pv" />
+<meta property="og:description" content="Kubernetes dynamic pv Install nfs NFS 是 Network File System 的缩写，即网络文件系统。 详细信息 1 yum -y install nfs-utils Configurtion nfs server 1 2 3 4 5 # 创建共享目录 mkdir /data &amp;&amp; chmod 755 /data vim /etc/exports # 添加配置 /data/ 192.168.0.0/24(rw,sync,no_root_squash,no_all_squash) /data: 共享目录位置。 192.168.0.0/24:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://renhao-0518.github.io/post/dynamic_pv/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-02-26T20:51:58&#43;08:00" />
+<meta property="article:modified_time" content="2021-02-26T20:51:58&#43;08:00" />
+
+<meta itemprop="name" content="Dynamic_pv">
+<meta itemprop="description" content="Kubernetes dynamic pv Install nfs NFS 是 Network File System 的缩写，即网络文件系统。 详细信息 1 yum -y install nfs-utils Configurtion nfs server 1 2 3 4 5 # 创建共享目录 mkdir /data &amp;&amp; chmod 755 /data vim /etc/exports # 添加配置 /data/ 192.168.0.0/24(rw,sync,no_root_squash,no_all_squash) /data: 共享目录位置。 192.168.0.0/24:"><meta itemprop="datePublished" content="2021-02-26T20:51:58&#43;08:00" />
+<meta itemprop="dateModified" content="2021-02-26T20:51:58&#43;08:00" />
+<meta itemprop="wordCount" content="290">
+<meta itemprop="keywords" content="kubernetes,storage," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dynamic_pv"/>
+<meta name="twitter:description" content="Kubernetes dynamic pv Install nfs NFS 是 Network File System 的缩写，即网络文件系统。 详细信息 1 yum -y install nfs-utils Configurtion nfs server 1 2 3 4 5 # 创建共享目录 mkdir /data &amp;&amp; chmod 755 /data vim /etc/exports # 添加配置 /data/ 192.168.0.0/24(rw,sync,no_root_squash,no_all_squash) /data: 共享目录位置。 192.168.0.0/24:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Cloud Native</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Cloud Native</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Dynamic_pv</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-26 </span>
+        <div class="post-category">
+            <a href="/categories/kubernetes/"> kubernetes </a>
+            <a href="/categories/storage/"> storage </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#kubernetes-dynamic-pv">Kubernetes dynamic pv</a>
+      <ul>
+        <li><a href="#install-nfs">Install nfs</a>
+          <ul>
+            <li><a href="#configurtion-nfs-server">Configurtion nfs server</a></li>
+          </ul>
+        </li>
+        <li><a href="#install-dynamic-pv">Install dynamic pv</a>
+          <ul>
+            <li><a href="#configurtion-default-storage-class">Configurtion default storage class</a></li>
+            <li><a href="#cancel-default-storage-class">Cancel default storage class</a></li>
+            <li><a href="#k8s-v1200-nfs">K8s v1.20.0 nfs</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="kubernetes-dynamic-pv">Kubernetes dynamic pv</h1>
+<h2 id="install-nfs">Install nfs</h2>
+<p>NFS 是 Network File System 的缩写，即网络文件系统。
+<a href="https://qizhanming.com/blog/2018/08/08/how-to-install-nfs-on-centos-7">详细信息</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install nfs-utils
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="configurtion-nfs-server">Configurtion nfs server</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 创建共享目录</span>
+mkdir /data <span class="o">&amp;&amp;</span> chmod <span class="m">755</span> /data
+vim /etc/exports
+<span class="c1">#  添加配置</span>
+/data/     192.168.0.0/24<span class="o">(</span>rw,sync,no_root_squash,no_all_squash<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>/data: 共享目录位置。</li>
+<li>192.168.0.0/24: 客户端 IP 范围，* 代表所有，即没有限制。</li>
+<li>rw: 权限设置，可读可写。</li>
+<li>sync: 同步共享目录。</li>
+<li>no_root_squash: 可以使用 root 授权。</li>
+<li>no_all_squash: 可以使用普通用户授权。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl <span class="nb">enable</span> rpcbind nfs <span class="o">&amp;&amp;</span> systemctl restart rpcbind nfs
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="install-dynamic-pv">Install dynamic pv</h2>
+<p><a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">Helm charts 详细信息</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 添加Helm repo</span>
+helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
+
+<span class="c1"># Install </span>
+helm install --name nfs <span class="se">\
+</span><span class="se"></span>--set nfs.server<span class="o">=</span>192.168.124.200 <span class="se">\
+</span><span class="se"></span>--set nfs.path<span class="o">=</span>/data <span class="se">\
+</span><span class="se"></span>nfs-subdir-external-provisioner/nfs-subdir-external-provisioner 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="configurtion-default-storage-class">Configurtion default storage class</h3>
+<p><a href="https://kubernetes.io/zh/docs/tasks/administer-cluster/change-default-storage-class/">详细信息</a></p>
+<p><code>设置默认Storage Classes，就不需要在pvc里面声明Sc的name，默认就会调用此sc</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">kubectl patch storageclass nfs-client -p <span class="s1">&#39;{&#34;metadata&#34;: {&#34;annotations&#34;:{&#34;storageclass.kubernetes.io/is-default-class&#34;:&#34;true&#34;}}}&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="cancel-default-storage-class">Cancel default storage class</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">kubectl patch storageclass nfs-client -p <span class="s1">&#39;{&#34;metadata&#34;: {&#34;annotations&#34;:{&#34;storageclass.kubernetes.io/is-default-class&#34;:&#34;false&#34;}}}&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="k8s-v1200-nfs">K8s v1.20.0 nfs</h3>
+<p><a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/issues/25">相关Issue</a>
+需要在kube-apiserver添加 <code>- --feature-gates=RemoveSelfLink=false</code></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Ren Hao</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-02-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/kubernetes/">kubernetes</a>
+          <a href="/tags/storage/">storage</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/etcd/">
+            <span class="next-text nav-default">Etcd</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://renhao-0518.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Ren Hao</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
