@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="olOwOlo" /><meta name="description" content="集群灾份工具 Velero Install Cli Donwload Cli velero是通过k8s config进行认证的，需要放到k8s master节点，或者本地有k8s config。更深度的" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Ren Hao" /><meta name="description" content="集群灾份工具 Velero Install Cli Donwload Cli velero是通过k8s config进行认证的，需要放到k8s master节点，或者本地有k8s config。更深度的" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.81.0 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/velero/" />
+<link rel="canonical" href="https://renhao-0518.github.io/post/velero/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -42,14 +42,14 @@
 <meta property="og:title" content="Velero" />
 <meta property="og:description" content="集群灾份工具 Velero Install Cli Donwload Cli velero是通过k8s config进行认证的，需要放到k8s master节点，或者本地有k8s config。更深度的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/velero/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://renhao-0518.github.io/post/velero/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-26T12:55:27&#43;08:00" />
 <meta property="article:modified_time" content="2021-02-26T12:55:27&#43;08:00" />
 
 <meta itemprop="name" content="Velero">
 <meta itemprop="description" content="集群灾份工具 Velero Install Cli Donwload Cli velero是通过k8s config进行认证的，需要放到k8s master节点，或者本地有k8s config。更深度的"><meta itemprop="datePublished" content="2021-02-26T12:55:27&#43;08:00" />
 <meta itemprop="dateModified" content="2021-02-26T12:55:27&#43;08:00" />
-<meta itemprop="wordCount" content="376">
+<meta itemprop="wordCount" content="365">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Velero"/>
 <meta name="twitter:description" content="集群灾份工具 Velero Install Cli Donwload Cli velero是通过k8s config进行认证的，需要放到k8s master节点，或者本地有k8s config。更深度的"/>
@@ -158,6 +158,7 @@
 </div>
     <div class="post-content">
       <h1 id="集群灾份工具-velero">集群灾份工具 Velero</h1>
+<p><img src="../image/velero/velero.png" alt=""></p>
 <h2 id="install-cli">Install Cli</h2>
 <p><a href="https://github.com/vmware-tanzu/velero/releases/latest">Donwload</a> Cli velero是通过k8s config进行认证的，需要放到k8s master节点，或者本地有k8s config。更深度的了解<a href="https://velero.io/docs/latest">Velero</a></p>
 <h3 id="configurtion-ak">configurtion ak</h3>
@@ -227,17 +228,17 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="backup">backup</h3>
-<p>#备份所有资源</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">velero backup create NAME --wait --ttl<span class="o">=</span>10h <span class="o">(</span>ttl default 720h,默认在oss存储1个月<span class="o">)</span>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#备份所有资源</span>
+velero backup create NAME --wait --ttl<span class="o">=</span>10h <span class="o">(</span>ttl default 720h,默认在oss存储1个月<span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>#备份某个命名空间的资源</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -297,7 +298,7 @@ velero create schedule NAME --schedule<span class="o">=</span><span class="s2">&
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
-    <span class="item-content">olOwOlo</span>
+    <span class="item-content">Ren Hao</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
@@ -329,22 +330,7 @@ velero create schedule NAME --schedule<span class="o">=</span><span class="s2">&
 
     <footer id="footer" class="footer">
       <div class="social-links">
-      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
-      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
-      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
-      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
-      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
-      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
-      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
-      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
-      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
-      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
-      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
-      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
-      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
-  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://renhao-0518.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
@@ -361,8 +347,7 @@ velero create schedule NAME --schedule<span class="o">=</span><span class="s2">&
 
   <span class="copyright-year">
     &copy; 
-    2017 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Ren Hao</span>
   </span>
 </div>
 

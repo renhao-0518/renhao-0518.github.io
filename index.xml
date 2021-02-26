@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/</link>
+    <link>https://renhao-0518.github.io/</link>
     <description>Recent content on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Feb 2021 12:55:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Feb 2021 12:55:27 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Velero</title>
-      <link>http://localhost:1313/post/velero/</link>
+      <link>https://renhao-0518.github.io/post/velero/</link>
       <pubDate>Fri, 26 Feb 2021 12:55:27 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/velero/</guid>
+      <guid>https://renhao-0518.github.io/post/velero/</guid>
       <description>集群灾份工具 Velero Install Cli Donwload Cli velero是通过k8s config进行认证的，需要放到k8s master节点，或者本地有k8s config。更深度的</description>
     </item>
     
