@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cd on Even - A super concise theme for Hugo</title>
+    <link>https://renhao-0518.github.io/tags/cd/</link>
+    <description>Recent content in cd on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Feb 2021 22:46:27 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/tags/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argocd</title>
+      <link>https://renhao-0518.github.io/post/argocd/</link>
+      <pubDate>Fri, 26 Feb 2021 22:46:27 +0800</pubDate>
+      
+      <guid>https://renhao-0518.github.io/post/argocd/</guid>
+      <description>Argo cd rest_api_url https://argocd.example.com/swagger-ui# argocd plugin Plugin 是argocd的精髓，你可以大胆的想象，没有它做不到的，例如你集成kubevela or ansbile 等等，只需要在 argocd-repo-server 中安装此工具即可。 Plugin 详细</description>
+    </item>
+    
+  </channel>
+</rss>
