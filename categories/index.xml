@@ -6,20 +6,20 @@
     <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Feb 2021 22:46:27 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Feb 2021 16:54:23 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cd</title>
-      <link>https://renhao-0518.github.io/categories/cd/</link>
-      <pubDate>Fri, 26 Feb 2021 22:46:27 +0800</pubDate>
+      <title>ci</title>
+      <link>https://renhao-0518.github.io/categories/ci/</link>
+      <pubDate>Sat, 27 Feb 2021 16:54:23 +0800</pubDate>
       
-      <guid>https://renhao-0518.github.io/categories/cd/</guid>
+      <guid>https://renhao-0518.github.io/categories/ci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ci&amp;cd</title>
       <link>https://renhao-0518.github.io/categories/cicd/</link>
-      <pubDate>Fri, 26 Feb 2021 22:46:27 +0800</pubDate>
+      <pubDate>Sat, 27 Feb 2021 16:54:23 +0800</pubDate>
       
       <guid>https://renhao-0518.github.io/categories/cicd/</guid>
       <description></description>
@@ -28,9 +28,18 @@
     <item>
       <title>kubernetes</title>
       <link>https://renhao-0518.github.io/categories/kubernetes/</link>
-      <pubDate>Fri, 26 Feb 2021 22:46:27 +0800</pubDate>
+      <pubDate>Sat, 27 Feb 2021 16:54:23 +0800</pubDate>
       
       <guid>https://renhao-0518.github.io/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cd</title>
+      <link>https://renhao-0518.github.io/categories/cd/</link>
+      <pubDate>Fri, 26 Feb 2021 22:46:27 +0800</pubDate>
+      
+      <guid>https://renhao-0518.github.io/categories/cd/</guid>
       <description></description>
     </item>
     

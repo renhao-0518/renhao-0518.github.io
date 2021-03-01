@@ -6,7 +6,16 @@
     <description>Recent content in kubernetes on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Feb 2021 22:46:27 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Feb 2021 16:54:23 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenkins</title>
+      <link>https://renhao-0518.github.io/post/jenkins/</link>
+      <pubDate>Sat, 27 Feb 2021 16:54:23 +0800</pubDate>
+      
+      <guid>https://renhao-0518.github.io/post/jenkins/</guid>
+      <description>Jenkins Install jenkins on kubernetes jenkins version：2.263.4 helm charts version：3.1.13 Helm Chart 1 2 3 4 5 6 7 helm repo add jenkins https://charts.jenkins.io helm install jenkins \ --namespace=jenkins-pipelines \ --set controller.adminPassword=cloudnative \ --set persistence.storageClass=nfs-client \ jenkins/jenkins Install plugin Plugin Kubernetes # default</description>
+    </item>
+    
     <item>
       <title>Argocd</title>
       <link>https://renhao-0518.github.io/post/argocd/</link>
