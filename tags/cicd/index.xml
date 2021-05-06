@@ -6,7 +6,34 @@
     <description>Recent content in ci&amp;cd on Cloud Native</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Feb 2021 16:54:23 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 15:33:14 +0800</lastBuildDate><atom:link href="https://renhao-0518.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tekton Pipelines</title>
+      <link>https://renhao-0518.github.io/post/tekton-pipelines/</link>
+      <pubDate>Fri, 02 Apr 2021 15:33:14 +0800</pubDate>
+      
+      <guid>https://renhao-0518.github.io/post/tekton-pipelines/</guid>
+      <description>Tekton Pipeline Auth Git basic auth 1 2 3 4 5 6 7 8 9 10 11  apiVersion:v1kind:Secretmetadata:name:gitlab-basic-authannotations:tekton.dev/git-0:http://gitlab.cloudnative.cn:8081tekton.dev/git-1:http://github.cloudnative.cn:8081type:kubernetes.io/basic-authstringData:username:xxxpassword:xxx  Git ssh auth 1 2 3 4 5 6 7 8 9 10 11 12 13  apiVersion:v1kind:Secretmetadata:name:gitlab-ssh-keyannotations:tekton.dev/git-0:gitlab.cloudnative.cntype:kubernetes.io/ssh-authstringData:ssh-privatekey:|------BEGIN RSA PRIVATE KEY----- xxx -----END RSA PRIVATE KEY-----known_hosts:xxx  Docker basic auth 1 2 3 4 5 6 7 8 9 10  apiVersion:v1kind:Secretmetadata:name:docker-basic-authannotations:tekton.dev/docker-0:https://registry.cn-hangzhou.aliyuncs.comtype:kubernetes.io/basic-authstringData:username:xxxpassword:xxx  ServiceAccount 1 2 3 4 5 6 7 8  apiVersion:v1kind:ServiceAccountmetadata:name:tekton-pipelinessecrets:- name:gitlab-basic-auth- name:gitlab-ssh-key- name:docker-basic-auth  Task Git clone 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114  apiVersion:tekton.</description>
+    </item>
+    
+    <item>
+      <title>Tekton Triggers</title>
+      <link>https://renhao-0518.github.io/post/tekton-triggers/</link>
+      <pubDate>Fri, 02 Apr 2021 15:33:12 +0800</pubDate>
+      
+      <guid>https://renhao-0518.github.io/post/tekton-triggers/</guid>
+      <description>Tekton Triggers EventListener 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38  apiVersion:triggers.tekton.dev/v1alpha1kind:EventListenermetadata:name:gitlab-listener-interceptorspec:serviceAccountName:tekton-triggerstriggers:- name:gitlab-listenerinterceptors:- gitlab:secretRef:secretName:gitlab-secretsecretKey:secretTokeneventTypes:- Push Hook- cel:# filter: header.match(&amp;#39;X-Gitlab-Event&amp;#39;, &amp;#39;Push Hook&amp;#39;) &amp;amp;&amp;amp; header.canonical(&amp;#39;X-Gitlab-Token&amp;#39;).compareSecret(&amp;#39;secretToken&amp;#39;, &amp;#39;gitlab-secret&amp;#39;)filter:body.commits[0].message.indexOf(&amp;#39;[skip ci]&amp;#39;) == -1 &amp;amp;&amp;amp; body.commits[0].message.indexOf(&amp;#39;[ci skip]&amp;#39;) == -1overlays:- key:branch_nameexpression:&amp;#34;body.ref.split(&amp;#39;/&amp;#39;)[2]&amp;#34;- key:commit_idexpression:&amp;#34;body.commits[0].id.truncate(7)&amp;#34;bindings:- ref:pipeline-bindingtemplate:ref:pipeline-templateresources:kubernetesResource:serviceType:NodePort---apiVersion:v1kind:Secretmetadata:name:gitlab-secrettype:OpaquestringData:secretToken:&amp;#34;cloudnative&amp;#34;  Rbac 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65  apiVersion:v1kind:ServiceAccountmetadata:name:tekton-triggers---apiVersion:rbac.</description>
+    </item>
+    
+    <item>
+      <title>Kaniko</title>
+      <link>https://renhao-0518.github.io/post/kaniko/</link>
+      <pubDate>Fri, 02 Apr 2021 14:38:30 +0800</pubDate>
+      
+      <guid>https://renhao-0518.github.io/post/kaniko/</guid>
+      <description>Kaniko kaniko在构建镜像时无需特权模式，提供缓存功能，开启缓存--cache=true第一种是Dockerfile中定义的执行命令，每个命令</description>
+    </item>
+    
     <item>
       <title>Jenkins</title>
       <link>https://renhao-0518.github.io/post/jenkins/</link>

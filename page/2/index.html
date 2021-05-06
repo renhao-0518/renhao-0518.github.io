@@ -122,6 +122,95 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/jenkins/">Jenkins</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-27 </span>
+      <div class="post-category">
+          <a href="/categories/kubernetes/"> kubernetes </a>
+          <a href="/categories/cicd/"> ci&amp;cd </a>
+          <a href="/categories/ci/"> ci </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Jenkins Install jenkins on kubernetes jenkins version：2.263.4 helm charts version：3.1.13 Helm Chart 1 2 3 4 5 6 7 helm repo add jenkins https://charts.jenkins.io helm install jenkins \ --namespace=jenkins-pipelines \ --set controller.adminPassword=cloudnative \ --set persistence.storageClass=nfs-client \ jenkins/jenkins Install plugin Plugin Kubernetes # default
+    </div>
+    <div class="read-more">
+      <a href="/post/jenkins/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/argocd/">Argocd</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-26 </span>
+      <div class="post-category">
+          <a href="/categories/kubernetes/"> kubernetes </a>
+          <a href="/categories/cicd/"> ci&amp;cd </a>
+          <a href="/categories/cd/"> cd </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Argo cd rest_api_url https://argocd.example.com/swagger-ui# argocd plugin Plugin 是argocd的精髓，你可以大胆的想象，没有它做不到的，例如你集成kubevela or ansbile 等等，只需要在 argocd-repo-server 中安装此工具即可。 Plugin 详细
+    </div>
+    <div class="read-more">
+      <a href="/post/argocd/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/shadowsocks/">Shadowsocks</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-26 </span>
+      <div class="post-category">
+          <a href="/categories/network/"> network </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Centos 翻墙 Install shadowsocks 1 2 3 yum -y install epel-release yum -y install python-pip pip install shadowsocks Configurtion shadowsocks config 免费翻墙账号 1 vim /etc/shadowsocks/shadowsocks.json 1 2 3 4 5 6 7 8 9 10 11 { &#34;server&#34;:&#34;173.0.55.66&#34;, &#34;server_port&#34;:11111, &#34;local_address&#34;: &#34;127.0.0.1&#34;, &#34;local_port&#34;:1080, &#34;password&#34;:&#34;dongtaiwang.com 123abc&#34;, &#34;timeout&#34;:300, &#34;method&#34;:&#34;aes-256-cfb&#34;, &#34;fast_open&#34;: false, &#34;workers&#34;: 1 } Create systemd server 1 2 3 4 5 6 7 8 9 10
+    </div>
+    <div class="read-more">
+      <a href="/post/shadowsocks/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/dynamic_pv/">Dynamic pv</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-02-26 </span>
+      <div class="post-category">
+          <a href="/categories/kubernetes/"> kubernetes </a>
+          <a href="/categories/storage/"> storage </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Kubernetes dynamic pv Install nfs NFS 是 Network File System 的缩写，即网络文件系统。 详细信息 1 yum -y install nfs-utils Configurtion nfs server 1 2 3 4 5 # 创建共享目录 mkdir /data &amp;&amp; chmod 755 /data vim /etc/exports # 添加配置 /data/ 192.168.0.0/24(rw,sync,no_root_squash,no_all_squash) /data: 共享目录位置。 192.168.0.0/24:
+    </div>
+    <div class="read-more">
+      <a href="/post/dynamic_pv/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/etcd/">Etcd</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-02-26 </span>
@@ -142,28 +231,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/velero/">Velero</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-02-26 </span>
-      <div class="post-category">
-          <a href="/categories/kubernetes/"> kubernetes </a>
-          <a href="/categories/backup/"> backup </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      集群灾份工具 Velero Install Cli Donwload Cli velero是通过k8s config进行认证的，需要放到k8s master节点，或者本地有k8s config。更深度的
-    </div>
-    <div class="read-more">
-      <a href="/post/velero/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -171,7 +238,10 @@
         <i class="iconfont icon-left"></i>
         <span class="prev-text">Prev</span>
       </a>
-    
+    <a class="next" href="/page/3/">
+        <span class="next-text">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
   </nav>
         </div>
         
